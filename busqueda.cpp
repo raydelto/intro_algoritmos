@@ -16,13 +16,13 @@ bool BusquedaLineal(int *arreglo, size_t cantidad, int numero)
 
 bool BusquedaBinaria(int *arreglo, size_t cantidad, int numero)
 {
-    size_t count = 0;
+    size_t contador = 0;
     size_t mitad;
     size_t limiteInferior = 0;
     size_t limiteSuperior = cantidad - 1;
     while (limiteInferior <= limiteSuperior)
     {
-        count++;
+        contador++;
         mitad = (limiteInferior + limiteSuperior) / 2;
 
         if (numero > arreglo[mitad])
@@ -35,18 +35,18 @@ bool BusquedaBinaria(int *arreglo, size_t cantidad, int numero)
         }
         else
         {
-            std::cout << "Número encontrado luego de " << count << " iteraciones" << std::endl;
+            std::cout << "Número encontrado luego de " << contador << " iteraciones" << std::endl;
             return true;
         }
     }
 
-    std::cout << "Luego de " << count << " iteraciones, el número no fue encontrado." << std::endl;
+    std::cout << "Luego de " << contador << " iteraciones, el número no fue encontrado." << std::endl;
     return false;
 }
 
 int main()
 {
-    int arreglo[] = {1, 3, 5, 7, 9, 11};
+    int arreglo[] = {1, 3, 5, 7, 9, 11, 13};
     size_t cantidad = sizeof(arreglo) / sizeof(int);
     int numero;
     cout << "Introduzca el número que desea buscar: ";
